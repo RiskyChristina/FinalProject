@@ -1,25 +1,48 @@
-VAR keys = -> the_keys
-VAR note = false
+LIST Inventory = Keys, Note
+VAR inventoryKeys = false
 
-You see a note..
-There seems to be something written on it.
+search for keys
+    *[bedroom] -> bedroom
+    *[kitchen] -> kitchen
 
-*[Pick up note] -> the_keys
-*[Throw note away] -> paragraph_3
-*[Ignore it] -> paragraph_4
+===key_check===
+Simple check for inventory
+{inventoryKeys:
+    ~inventoryKeys = keyCheck
+    *[leave house] -> leave_house
+    -else:
+    +[search new room] -> bedroom
+    }
 
-===the_keys===
-You pick up the note 
-*[Find Keys]
--They were exactly where the note said they would be. By the writing it looks like Jared wrote this letter.
--He's always thinking of me.
--> DONE
+===leave_house===
+you get in car and leave
+->END
 
-===paragraph_3===
-You threw away the note. "Now back to looking for my keys.." 
--> DONE
+===bedroom===
+found the keys
+{inventoryKeys} -> key_check
+
+===kitchen===
+did not find keys 
+*[bedroom] -> bedroom
+
+===function keyCheck()===
+~ inventoryKeys = true
 
 
-===paragraph_4===
-You sigh. "There's always so many sticky notes lying  around the house"
--> DONE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
