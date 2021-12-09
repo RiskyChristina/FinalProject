@@ -14,3 +14,5 @@ the story for Alice will end and the prompt will take you back to the start of t
 and the player will be able to play through their story line. This gives the chance for the player to experience what it is like to be three different people.
 
 To unlock all three people, you will need to play as Alice twice and pick the outfit you didn't pick the first time.
+
+To run the game go to: https://risky32.itch.io/final-project
